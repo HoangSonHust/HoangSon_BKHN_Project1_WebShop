@@ -1,0 +1,28 @@
+﻿@{
+    var SideBar = ViewBag.SideBar;
+    var Brands = ViewBag.Brands;
+}
+<div class="col-lg-3">
+    <div class="shop_sidebar">
+        <div class="sidebar_section">
+            <div class="sidebar_title">Danh mục</div>
+            <ul class="sidebar_categories">
+                @foreach (var Item in SideBar)
+                {
+                    
+                    <li><a href="/User/Product/ShopByCategory/@Item.Metatitle">@Item.Name</a></li>
+                }
+
+            </ul>
+        </div>
+        <div class="sidebar_section">
+            <div class="sidebar_subtitle brands_subtitle">Brands</div>
+            <ul class="brands_list">
+                @foreach (var Item in Brands)
+                {
+                    <li class="brand"><a href="/User/Product/ShopByBrand/@Item.MetaTitle">@Item.BrandName</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

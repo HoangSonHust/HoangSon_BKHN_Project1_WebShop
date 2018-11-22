@@ -1,0 +1,13 @@
+﻿<!--không biết tại sao nhưng nếu ko thêm vào thì vẫn chạy được, mà nếu thêm vào cũng vẫn chạy nhưng nó lại có cái dòng text lạ mà ko truy ra được-->
+<!--System.Collections.Generic.List`1[WebShop_Model.EF.Menu] List-->
+<!--@Model List<Model.EF.Menu>-->
+
+<div class="main_nav_menu ml-auto">
+    <ul class="standard_dropdown main_nav_dropdown">
+        @foreach (var Item in @Model)
+        {
+            <li><a href="@Item.Link" target="@Item.Target">@Item.Text<i class="fas fa-chevron-down"></i></a></li>
+        }
+
+    </ul>
+</div>

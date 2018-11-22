@@ -1,0 +1,14 @@
+﻿<div class="cat_menu_container">
+    <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+        <div class="cat_burger"><span></span><span></span><span></span></div>
+        <div class="cat_menu_text">Danh mục</div>
+    </div>
+
+    <ul class="cat_menu">
+
+        @foreach (var Item in Model)
+        {
+            <li><a href="/san_pham/@Item.Metatitle-@Item.ID">@Item.Name<i class="fas fa-chevron-right ml-auto"></i></a></li>
+        }
+    </ul>
+</div>

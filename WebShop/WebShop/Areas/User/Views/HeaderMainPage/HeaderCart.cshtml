@@ -1,0 +1,16 @@
+﻿@{ 
+   var list= ViewBag.List ;
+}
+    <div class="cart">
+        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+            <div class="cart_icon">
+                <img src="/Assets/User/images/cart.png" alt="">
+                <div class="cart_count"><span>@list.Count Sản phẩm</span></div>
+            </div>
+            <div class="cart_content">
+                <div class="cart_text"><a href="/User/Cart/Cart">Cart</a></div>
+                <div class="cart_price"></div>
+            </div>
+        </div>
+    </div>
+

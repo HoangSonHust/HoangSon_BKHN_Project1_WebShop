@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "DetailIntroducePost";
+    Layout = "~/Areas/User/Views/Shared/_Main_SingleBlog_Layout.cshtml";
+    var News = ViewBag.News;
+}
+
+<div class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="blog_posts d-flex flex-row align-items-start justify-content-between">
+
+                    <!-- Blog post -->
+                    @foreach (var Item in News)
+                    {
+                    <div class="blog_post">
+                        <div class="blog_image" style="background-image:url(@Item.Image)"></div>
+                        <div class="blog_text">@Item.NewsName</div>
+                        <div class="blog_text">@Item.Description</div>
+                        <div class="blog_button"><a href="/User/News/DetailNews/@Item.MetaTitle/">Continue Reading</a></div>
+                    </div>
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
