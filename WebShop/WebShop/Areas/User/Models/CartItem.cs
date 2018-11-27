@@ -11,7 +11,7 @@ namespace WebShop.Areas.User.Models
         //(đối tượng này mang trong nó các thuộc tính con khác=> ko quan trong)
         public Product Product { set; get; }
         public int Quantity { set; get; }
-       public List<ProductColor> ProductColor { set; get; }
+      
 
 
     }

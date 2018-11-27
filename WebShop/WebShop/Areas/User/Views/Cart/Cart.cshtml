@@ -27,23 +27,7 @@
                                                 <div class="cart_item_title">Name</div>
                                                 <div class="cart_item_text">@item.Product.Name</div>
                                             </div>
-                                            <div class="cart_item_color cart_info_col">
-                                                <div class="cart_item_title">Màu</div>
-                                                <ul class="product_color">
-                                                    <li>
-                                                        <span>Color: </span>
-                                                        <div class="color_mark_container"><div id="selected_color" class="color_mark"></div></div>
-                                                        <div class="color_dropdown_button"><i class="fas fa-chevron-down"></i></div>
-                                                        <ul class="color_list">
-                                                            @foreach (var color in item.ProductColor)
-                                                            {
 
-                                                                <li><div class="color_mark" style="background:@color.ColorBackgroud ;"></div></li>
-                                                            }
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                             <div class="cart_item_quantity cart_info_col">
                                                 <div class="cart_item_title">Số lượng</div>
                                                 <input type="number" class="txtQuantity" data-id="@item.Product.ID" min="1" value="@item.Quantity" />
@@ -55,6 +39,12 @@
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Tổng Giá</div>
                                                 <div class="cart_item_text">@(item.Product.Price * item.Quantity) đồng</div>
+                                            </div>
+                                            
+                                            <div class="">
+                                                <div class="cart_item_title">Xóa</div>
+     
+                                                <div><a href="#" data-id="@item.Product.ID" class="btn-delete">Xóa</a></div>
                                             </div>
                                         </div>
                                     </li>

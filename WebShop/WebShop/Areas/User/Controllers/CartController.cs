@@ -20,14 +20,12 @@ namespace WebShop.Areas.User.Controllers
             {
                 list = (List<CartItem>)cart;
             }
-            /*  foreach(var item in list)
-              {
-                  ViewBag.Color = new ProductColorDao().TakeProductColor(item.Product.ID);
-              }*/
+            
             ViewBag.List = list;
 
             return View(list);
         }
+        
         public JsonResult Update(string cartModel)
         {
             var jsonCart = new JavaScriptSerializer().Deserialize<List<CartItem>>(cartModel);
@@ -53,9 +51,9 @@ namespace WebShop.Areas.User.Controllers
         {
             // tạo 1 đối tượng product khi ta truyền ID vào
             var product = new ProductDao().TakeSingleProductID(productID);
-            var productColor = new ProductColorDao().TakeProductColor(productID);
+          
             //lấy giá trị biến session truyền vào cart
-            var cart = Session[Common.ComonConstants.CartSession];
+            var cart = Session[CartSession];
             //nếu cart ko rỗng
             if (cart != null)
             {
@@ -78,11 +76,11 @@ namespace WebShop.Areas.User.Controllers
                     var item = new CartItem();
                     item.Product = product;
                     item.Quantity = quantity;
-                    item.ProductColor = productColor;
+                  
                     list.Add(item);
                 }
                 //gán vào session
-                Session[Common.ComonConstants.CartSession] = list;
+                Session[CartSession] = list;
 
             }
             //nếu có sản phẩm trong rồi
@@ -92,23 +90,35 @@ namespace WebShop.Areas.User.Controllers
                 var item = new CartItem();
                 item.Product = product;
                 item.Quantity = quantity;
-                item.ProductColor = productColor;
+              
                 var list = new List<CartItem>();
                 list.Add(item);
 
                 //gán vào session
-                Session[Common.ComonConstants.CartSession] = list;
+                Session[CartSession] = list;
             }
             return RedirectToAction("Cart");
         }
 
-        // [ChildActionOnly]
-        public ActionResult CartColor()
-        {
 
-            return View();
+        public JsonResult DeleteAll()
+        {
+            Session[CartSession] = null;
+            return Json(new
+            {
+                status = true
+            });
         }
 
-
+        public JsonResult Delete(long id)
+        {
+            var sessionCart = (List<CartItem>)Session[CartSession];
+            sessionCart.RemoveAll(x => x.Product.ID == id);
+            Session[CartSession] = sessionCart;
+            return Json(new
+            {
+                status = true
+            });
+        }
     }
 }
