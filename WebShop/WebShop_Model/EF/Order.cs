@@ -11,10 +11,10 @@ namespace WebShop_Model.EF
     {
         public int ID { get; set; }
 
-        public long? CustomerID { get; set; }
-
         [StringLength(50)]
         public string CustomerName { get; set; }
+
+        public int? CustomerID { get; set; }
 
         public DateTime? CreatedDate { get; set; }
 
@@ -27,6 +27,6 @@ namespace WebShop_Model.EF
         [StringLength(50)]
         public string CustomerEmail { get; set; }
 
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
     }
 }

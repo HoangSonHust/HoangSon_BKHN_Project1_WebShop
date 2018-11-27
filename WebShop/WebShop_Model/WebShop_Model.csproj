@@ -75,6 +75,8 @@
     <Compile Include="Dao\AboutDao.cs" />
     <Compile Include="Dao\ContactDao.cs" />
     <Compile Include="Dao\NewsDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\OrderDetailDao.cs" />
     <Compile Include="Dao\ProductColorDao.cs" />
     <Compile Include="Dao\PromotionDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />

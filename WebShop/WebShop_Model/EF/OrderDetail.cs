@@ -9,10 +9,8 @@ namespace WebShop_Model.EF
     [Table("OrderDetail")]
     public partial class OrderDetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderID { get; set; }
 
         public int? ProductID { get; set; }

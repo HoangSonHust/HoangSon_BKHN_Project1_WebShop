@@ -38,12 +38,11 @@
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Tổng Giá</div>
-                                                <div class="cart_item_text">@(item.Product.Price * item.Quantity) đồng</div>
+                                                <div class="cart_item_text">@(item.Product.PromotionPrice * item.Quantity) đồng</div>
                                             </div>
-                                            
                                             <div class="">
                                                 <div class="cart_item_title">Xóa</div>
-     
+
                                                 <div><a href="#" data-id="@item.Product.ID" class="btn-delete">Xóa</a></div>
                                             </div>
                                         </div>

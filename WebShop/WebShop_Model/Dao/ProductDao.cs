@@ -56,7 +56,7 @@ namespace WebShop_Model.Dao
             //return db.Products.Where()
         }
 
-        
+
         public void AddView(int id)
         {
             var view = db.Products.SingleOrDefault(i => i.ID == id);
@@ -68,8 +68,23 @@ namespace WebShop_Model.Dao
             {
                 view.ViewCount++;
             }
-           
+
             db.SaveChanges();
+        }
+
+        public void DecreaseProductQuantity(int id, int quantity)
+        {
+            var product = db.Products.SingleOrDefault(x => x.ID == id);
+            product.Quantity = product.Quantity - quantity;
+            db.SaveChanges();
+        }
+
+        public int TakeProductQuantity(int id)
+        {
+
+            var product = db.Products.SingleOrDefault(x => x.ID == id);
+            return product.Quantity;
+
         }
 
         // test truy vấn theo cách khác

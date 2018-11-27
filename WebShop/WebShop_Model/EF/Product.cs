@@ -38,7 +38,7 @@ namespace WebShop_Model.EF
 
         public decimal? PromotionPrice { get; set; }
 
-        public int? Quantity { get; set; }
+        public int Quantity { get; set; }
 
         public int? CategoryID { get; set; }
 

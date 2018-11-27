@@ -30,13 +30,5 @@ namespace WebShop.Areas.User.Controllers
             return View();
         }
 
-        public ActionResult test()
-        {
-            return View();
-        }
-        public ActionResult test1()
-        {
-            return View();
-        }
     }
 }
