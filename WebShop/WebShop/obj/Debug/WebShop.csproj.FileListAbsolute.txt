@@ -175,9 +175,6 @@ C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\System.Web.WebPages.dll
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\System.Web.WebPages.Razor.dll
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\WebGrease.dll
-C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\WebShop_Model.dll
-C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\WebShop_Model.pdb
-C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\WebShop_Model.dll.config
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\EntityFramework.xml
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\EntityFramework.SqlServer.xml
 C:\Users\Hoang Son\Desktop\github\HoangSon_BKHN_Project1_WebShop\WebShop\WebShop\bin\PagedList.xml

@@ -19,8 +19,8 @@ namespace WebShop.Areas.User
                 "User/{controller}/{action}/{id}",
                 new
                 {
-                    action = "Shop",
-                    Controller = "Shop",
+                    action = "MainShop",
+                    Controller = "Product",
                     id = UrlParameter.Optional
                 }
             );

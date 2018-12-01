@@ -4,10 +4,10 @@
     },
     regEvents: function () {
         $('#btnContinue').off('click').on('click', function () {
-            window.location.href = "/User/Shop/Shop/";
+            window.location.href = "";
         });
         $('#btnPayment').off('click').on('click', function () {
-            window.location.href = "/User/Cart/Payment";
+            window.location.href = "thanh-toan";
         });
         $('#btnUpdate').off('click').on('click', function () {
             var listProduct = $('.txtQuantity');
@@ -21,13 +21,13 @@
                 });
             });
             $.ajax({
-                url: '/User/Cart/Update',
+                url: '/Cart/Update',
                 data: { cartModel: JSON.stringify(cartList) },
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {
                     if (res.status == true) {
-                        window.location.href = "/User/Cart/Cart";
+                        window.location.href = "/Cart/Cart";
                     }
                 }
             })
@@ -35,12 +35,12 @@
 
         $('#btnDeleteAll').off('click').on('click', function () {
           $.ajax({
-                url: '/User/Cart/DeleteAll',
+                url: '/Cart/DeleteAll',
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {
                     if (res.status == true) {
-                        window.location.href = "/User/Cart/Cart";
+                        window.location.href = "/Cart/Cart";
                     }
                 }
             })
@@ -51,12 +51,12 @@
             e.preventDefault();
             $.ajax({
                 data: { id: $(this).data('id') },
-                url: '/User/Cart/Delete',
+                url: '/Cart/Delete',
                 dataType: 'json',
                 type: 'POST',
                 success: function (res) {
                     if (res.status == true) {
-                        window.location.href = "/User/Cart/Cart";
+                        window.location.href = "/Cart/Cart";
                     }
                 }
             })

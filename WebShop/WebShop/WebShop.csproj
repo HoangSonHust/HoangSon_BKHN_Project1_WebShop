@@ -61,6 +61,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -160,23 +162,34 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Common\ComonConstants.cs" />
-    <Compile Include="Areas\User\Controllers\CartController.cs" />
-    <Compile Include="Areas\User\Controllers\ContactController.cs" />
-    <Compile Include="Areas\User\Controllers\HeaderMainPageController.cs" />
-    <Compile Include="Areas\User\Controllers\AboutController.cs" />
-    <Compile Include="Areas\User\Controllers\NewsController.cs" />
-    <Compile Include="Areas\User\Controllers\ProductController.cs" />
-    <Compile Include="Areas\User\Controllers\PromotionController.cs" />
-    <Compile Include="Areas\User\Controllers\ShopController.cs" />
-    <Compile Include="Areas\User\Models\CartItem.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HeaderMainPageController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\PromotionController.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\About.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuType.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\Promotion.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WebShopDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\User\Views\XML File\ImageXML\Image_SingleProduct_ID_1.xml" />
     <Content Include="Assets\User\images\adv_1.png" />
     <Content Include="Assets\User\images\adv_2.png" />
     <Content Include="Assets\User\images\adv_3.png" />
@@ -345,13 +358,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\User\Views\web.config" />
-    <Content Include="Areas\User\Views\HeaderMainPage\MainMenu.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Main_Shop_Layout.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\TopMenu.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Recently_Viewed.cshtml" />
-    <Content Include="Areas\User\Views\HeaderMainPage\Search.cshtml" />
-    <Content Include="Areas\User\Views\HeaderMainPage\CategoriesMenu.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\HeaderMainPage\MainMenu.cshtml" />
+    <Content Include="Views\Shared\_Main_Shop_Layout.cshtml" />
+    <Content Include="Views\RenderPage\TopMenu.cshtml" />
+    <Content Include="Views\RenderPage\Recently_Viewed.cshtml" />
+    <Content Include="Views\HeaderMainPage\Search.cshtml" />
+    <Content Include="Views\HeaderMainPage\CategoriesMenu.cshtml" />
     <Content Include="Assets\User\plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.eot" />
     <Content Include="Assets\User\plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.ttf" />
     <Content Include="Assets\User\plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.woff" />
@@ -367,35 +380,36 @@
     <Content Include="Assets\User\plugins\slick-1.8.0\fonts\slick.eot" />
     <Content Include="Assets\User\plugins\slick-1.8.0\fonts\slick.ttf" />
     <Content Include="Assets\User\plugins\slick-1.8.0\fonts\slick.woff" />
-    <Content Include="Areas\User\Views\Shared\_Main_Blog_Layout.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Main_SingleBlog_Layout.cshtml" />
-    <Content Include="Areas\User\Views\About\IntroducePost.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Header.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Home.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Brands.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Newsletter.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Copyright.cshtml" />
-    <Content Include="Areas\User\Views\RenderPage\Footer.cshtml" />
-    <Content Include="Areas\User\Views\News\News.cshtml" />
-    <Content Include="Areas\User\Views\HeaderMainPage\PageMenu.cshtml" />
-    <Content Include="Areas\User\Views\News\DetailNews.cshtml" />
-    <Content Include="Areas\User\Views\Contact\Contact.cshtml" />
-    <Content Include="Areas\User\Views\Promotion\Promotion.cshtml" />
-    <Content Include="Areas\User\Views\Promotion\PromotionDetail.cshtml" />
-    <Content Include="Areas\User\Views\Product\ShopByBrand.cshtml" />
-    <Content Include="Areas\User\Views\Shop\ShopSidebar.cshtml" />
-    <Content Include="Areas\User\Views\Product\ShopByCategory.cshtml" />
-    <Content Include="Areas\User\Views\Shop\Shop.cshtml" />
-    <Content Include="Areas\User\Views\Product\SingleProduct.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Main_SingleProduct_Layout.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Main_Cart_Layout.cshtml" />
-    <Content Include="Areas\User\Views\Cart\Cart.cshtml" />
-    <Content Include="Areas\User\Views\Product\SearchProduct.cshtml" />
-    <Content Include="Areas\User\Views\HeaderMainPage\HeaderCart.cshtml" />
-    <Content Include="Areas\User\Views\Cart\CartColor.cshtml" />
-    <Content Include="Areas\User\Views\Cart\Payment.cshtml" />
-    <Content Include="Areas\User\Views\Cart\Success.cshtml" />
-    <Content Include="Areas\User\Views\Cart\NoSuccess.cshtml" />
+    <Content Include="Views\Shared\_Main_Blog_Layout.cshtml" />
+    <Content Include="Views\Shared\_Main_SingleBlog_Layout.cshtml" />
+    <Content Include="Views\About\IntroducePost.cshtml" />
+    <Content Include="Views\RenderPage\Header.cshtml" />
+    <Content Include="Views\RenderPage\Home.cshtml" />
+    <Content Include="Views\RenderPage\Brands.cshtml" />
+    <Content Include="Views\RenderPage\Newsletter.cshtml" />
+    <Content Include="Views\RenderPage\Copyright.cshtml" />
+    <Content Include="Views\RenderPage\Footer.cshtml" />
+    <Content Include="Views\News\News.cshtml" />
+    <Content Include="Views\HeaderMainPage\PageMenu.cshtml" />
+    <Content Include="Views\News\DetailNews.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Promotion\Promotion.cshtml" />
+    <Content Include="Views\Promotion\PromotionDetail.cshtml" />
+    <Content Include="Views\Product\ShopByBrand.cshtml" />
+    <Content Include="Views\Product\ShopByCategory.cshtml" />
+    <Content Include="Views\Product\SingleProduct.cshtml" />
+    <Content Include="Views\Shared\_Main_SingleProduct_Layout.cshtml" />
+    <Content Include="Views\Shared\_Main_Cart_Layout.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Product\SearchProduct.cshtml" />
+    <Content Include="Views\HeaderMainPage\HeaderCart.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Cart\NoSuccess.cshtml" />
+    <Content Include="Views\Product\ShopSidebar.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Product\MainShop.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -417,8 +431,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\User\Views\CartItem\" />
-    <Folder Include="Areas\User\Views\XML File\ColorXML\" />
+    <Folder Include="Areas\User\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -432,12 +445,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebShop_Model\WebShop_Model.csproj">
-      <Project>{da1a2c0d-511d-4976-9f1e-645f5a23d03a}</Project>
-      <Name>WebShop_Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

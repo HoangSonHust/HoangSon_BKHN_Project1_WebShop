@@ -70,36 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Dao\CategoriesMenuDao.cs" />
-    <Compile Include="Dao\BrandsDao.cs" />
-    <Compile Include="Dao\AboutDao.cs" />
-    <Compile Include="Dao\ContactDao.cs" />
-    <Compile Include="Dao\NewsDao.cs" />
-    <Compile Include="Dao\OrderDao.cs" />
-    <Compile Include="Dao\OrderDetailDao.cs" />
-    <Compile Include="Dao\ProductColorDao.cs" />
-    <Compile Include="Dao\PromotionDao.cs" />
-    <Compile Include="Dao\ProductDao.cs" />
-    <Compile Include="Dao\ShopSideBarDao.cs" />
-    <Compile Include="Dao\SearchDao.cs" />
-    <Compile Include="Dao\MenuDao.cs" />
-    <Compile Include="EF\About.cs" />
-    <Compile Include="EF\Brand.cs" />
-    <Compile Include="EF\Contact.cs" />
-    <Compile Include="EF\Footer.cs" />
-    <Compile Include="EF\Menu.cs" />
-    <Compile Include="EF\MenuType.cs" />
-    <Compile Include="EF\News.cs" />
-    <Compile Include="EF\Order.cs" />
-    <Compile Include="EF\OrderDetail.cs" />
-    <Compile Include="EF\Product.cs" />
-    <Compile Include="EF\ProductCategory.cs" />
-    <Compile Include="EF\ProductColor.cs" />
-    <Compile Include="EF\Promotion.cs" />
-    <Compile Include="EF\Slide.cs" />
-    <Compile Include="EF\sysdiagram.cs" />
-    <Compile Include="EF\User.cs" />
-    <Compile Include="EF\WebShop_Model_DB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

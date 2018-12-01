@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Main_Shop_Layout.cshtml";
+    var ReviewProduct = ViewBag.ReviewProduct;
+}
+<h2>Index</h2>
+<div class="shop">
+    <div class="container">
+        <div class="row">
+            <!-- Shop Sidebar -->
+            @{Html.RenderAction("ShopSidebar", "Product");}
+            <div class="col-lg-9">
+                <!-- Shop Content -->
+                <div class="shop_content">
+                    <div class="shop_bar clearfix">
+                        <div class="shop_product_count"><span>186</span> products found</div>
+                      
+                    </div>
+
+                    <div class="product_grid">
+                        <div class="product_grid_border"></div>
+                        @foreach (var Item in ReviewProduct)
+                        {
+                            <!-- Product Item -->
+                            <div class="product_item is_new">
+                                <div class="product_border"></div>
+                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src=@Item.Image></div>
+                                <div class="product_content">
+                                    <div class="product_price">giá gốc: @Item.Price đồng</div>
+                                    <div class="product_price">giá khuyến mãi: @Item.PromotionPrice đồng</div>
+                                    <div class="product_name"><div><a href="@Item.MetaTitle" tabindex="0">@Item.Name</a></div></div>
+                                </div>
+                                <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                <ul class="product_marks">
+                                    <li class="product_mark product_discount">-25%</li>
+                                    <li class="product_mark product_discount">-((@Item.Price/@Item.PromotionPrice)*100)%</li>
+                                </ul>
+
+                            </div>
+
+                        }
+
+                    </div>
+
+                </div>
+
+             
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+

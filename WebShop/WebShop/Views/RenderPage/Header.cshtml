@@ -1,0 +1,68 @@
+﻿<header class="header">
+    <!-- Top Bar -->
+    <div class="header_main">
+        <div class="container">
+            <div class="row">
+
+                <!-- Logo -->
+                <div class="col-lg-2 col-sm-3 col-3 order-1">
+                    <div class="logo_container">
+                        <div class="logo"><a href="/">WebShop</a></div>
+                    </div>
+                </div>
+                <!-- Search -->
+                @{Html.RenderAction("Search", "HeaderMainPage");}
+                <!-- Wishlist -->
+                <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                    <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+                        <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                            <div class="wishlist_icon"><img src="/Assets/User/images/heart.png" alt=""></div>
+                            <div class="wishlist_content">
+                                <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                <div class="wishlist_count">115</div>
+                            </div>
+                        </div>
+                        <!-- Cart -->
+                        @{Html.RenderAction("HeaderCart", "HeaderMainPage");}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Navigation -->
+    <nav class="main_nav">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="main_nav_content d-flex flex-row">
+
+                        <!-- Categories Menu -->
+
+                        @{Html.RenderAction("CategoriesMenu", "HeaderMainPage");}
+
+                        <!-- Main Menu -->
+                        @{Html.RenderAction("MainMenu", "HeaderMainPage");}
+
+
+                        <!-- Menu Trigger -->
+
+                        <div class="menu_trigger_container ml-auto">
+                            <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                                <div class="menu_burger">
+                                    <div class="menu_trigger_text">menu</div>
+                                    <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PageMenu -->
+    @{Html.RenderAction("PageMenu", "HeaderMainPage");}
+
+</header>
