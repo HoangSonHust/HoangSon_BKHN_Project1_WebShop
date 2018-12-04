@@ -9,9 +9,9 @@ namespace WebShop.Controllers
 {
     public class AboutController : Controller
     {
-        public ActionResult IntroducePost(int ID)
+        public ActionResult IntroducePost()
         {
-            ViewBag.DetailIntroduce = new About().TakeContent(ID);
+            ViewBag.DetailIntroduce = new About().TakeContent(1);
             
             return View();
         }

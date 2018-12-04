@@ -31,17 +31,14 @@
                             <td><input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" /></td>
                             <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
                             <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
-                            <td><a href="#" data-id="@item.Product.ID" class="btn-delete">Xoá</a></td>
+                           
                         </tr>
                     }
 
                 </tbody>
             </table>
 
-            <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
-            <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
-            <button id="btnDeleteAll" class="btn">Xoá giỏ hàng</button>
-            <button id="btnPayment" class="btn">Thanh toán</button>
+          
         }
         else
         {

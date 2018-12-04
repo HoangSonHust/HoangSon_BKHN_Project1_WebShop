@@ -4,10 +4,10 @@
     },
     regEvents: function () {
         $('#btnContinue').off('click').on('click', function () {
-            window.location.href = "/";
+            window.location.href = "/Product/MainShop", true;
         });
         $('#btnPayment').off('click').on('click', function () {
-            window.location.href = "/Cart/Payment";
+            window.location.href = "/Cart/Payment", true;
         });
         $('#btnUpdate').off('click').on('click', function () {
             var listProduct = $('.txtQuantity');

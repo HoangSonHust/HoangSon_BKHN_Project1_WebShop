@@ -362,7 +362,6 @@
     <Content Include="Views\HeaderMainPage\MainMenu.cshtml" />
     <Content Include="Views\Shared\_Main_Shop_Layout.cshtml" />
     <Content Include="Views\RenderPage\TopMenu.cshtml" />
-    <Content Include="Views\RenderPage\Recently_Viewed.cshtml" />
     <Content Include="Views\HeaderMainPage\Search.cshtml" />
     <Content Include="Views\HeaderMainPage\CategoriesMenu.cshtml" />
     <Content Include="Assets\User\plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.eot" />
@@ -386,8 +385,6 @@
     <Content Include="Views\RenderPage\Header.cshtml" />
     <Content Include="Views\RenderPage\Home.cshtml" />
     <Content Include="Views\RenderPage\Brands.cshtml" />
-    <Content Include="Views\RenderPage\Newsletter.cshtml" />
-    <Content Include="Views\RenderPage\Copyright.cshtml" />
     <Content Include="Views\RenderPage\Footer.cshtml" />
     <Content Include="Views\News\News.cshtml" />
     <Content Include="Views\HeaderMainPage\PageMenu.cshtml" />

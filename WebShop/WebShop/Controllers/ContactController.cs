@@ -11,27 +11,13 @@ namespace WebShop.Controllers
     {
         // GET: User/Contact
         [HttpGet]
-        public ActionResult Contact(int ID)
+        public ActionResult Contact()
         {
-            ViewBag.ContactPost = new Contact().TakeContent(ID);
+            ViewBag.ContactPost = new Contact().TakeContent(1);
 
             return View();
         }
 
-        public ActionResult Contact2()
-        {
-        
-
-            return View();
-        }
-        public ActionResult Contact3()
-        {
-            return View();
-        }
-
-        public ActionResult Contact4()
-        {
-            return View();
-        }
+       
     }
 }

@@ -144,19 +144,19 @@ namespace WebShop.Controllers
         {
             var productDao = new Product();
             var cart = (List<CartItem>)Session[CartSession];
-            if (shipName == null)
+            if (shipName == "")
             {
                 return Redirect("/Cart/NoSuccess/2");
             }
-            if (mobile == null)
+            if (mobile == "")
             {
                 return Redirect("/Cart/NoSuccess/3");
             }
-            if (address == null)
+            if (address == "")
             {
                 return Redirect("/Cart/NoSuccess/4");
             }
-            if (email == null)
+            if (email == "")
             {
                 return Redirect("/Cart/NoSuccess/5");
             }
@@ -177,6 +177,7 @@ namespace WebShop.Controllers
                 order.CustomerTel = mobile;
                 order.CustomerName = shipName;
                 order.CustomerEmail = email;
+                order.Status = true;
 
 
                 var id = new WebShop.Models.Order().Insert(order);
