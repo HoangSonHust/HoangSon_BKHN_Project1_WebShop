@@ -4,10 +4,10 @@
     },
     regEvents: function () {
         $('#btnContinue').off('click').on('click', function () {
-            window.location.href = "";
+            window.location.href = "/";
         });
         $('#btnPayment').off('click').on('click', function () {
-            window.location.href = "thanh-toan";
+            window.location.href = "/Cart/Payment";
         });
         $('#btnUpdate').off('click').on('click', function () {
             var listProduct = $('.txtQuantity');
@@ -34,7 +34,7 @@
         });
 
         $('#btnDeleteAll').off('click').on('click', function () {
-          $.ajax({
+            $.ajax({
                 url: '/Cart/DeleteAll',
                 dataType: 'json',
                 type: 'POST',
