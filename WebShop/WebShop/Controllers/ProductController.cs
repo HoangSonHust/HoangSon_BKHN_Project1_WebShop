@@ -8,7 +8,7 @@ namespace WebShop.Controllers
         public ActionResult ShopByBrand(int ID)
         {
             ViewBag.ReviewProduct = new Product().TakeProductByBrand(ID);
-            ViewBag.totalRecord = new Product().TakeTotalRecordProduct();
+            ViewBag.totalRecord = new Product().TakeTotalRecordProductByBrand(ID);
             /* var model = new ProductDao().ListAllPageProductByBrand(ID,page, pageSize);*/
             return View();
         }
@@ -16,7 +16,7 @@ namespace WebShop.Controllers
         public ActionResult ShopByCategory(int ID)
         {
             ViewBag.ReviewProduct = new Product().TakeProductByCategory(ID);
-            ViewBag.totalRecord = new Product().TakeTotalRecordProduct();
+            ViewBag.totalRecord = new Product().TakeTotalRecordProductByCategory(ID);
             return View();
         }
 
@@ -27,9 +27,10 @@ namespace WebShop.Controllers
             ViewBag.SingleProduct = new Product().TakeProductID(ID);
             return View();
         }
-        public ActionResult SearchProduct(string searchString, string Category)
+        public ActionResult SearchProduct(string searchString)
         {
             ViewBag.searchProduct = new Product().SearchProduct(searchString);
+            ViewBag.totalRecord = new Product().TakeTotalRecordProductBySearchProduct(searchString);
             return View();
         }
 

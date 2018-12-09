@@ -92,6 +92,24 @@
 
         }
 
+        public int TakeTotalRecordProductByBrand(int iD)
+        {
+            var totalRecord = db.Products.Where(x => x.Status == true && x.BrandID== ID && x.Quantity > 0).Count();
+            return totalRecord;
+        }
+
+        public int TakeTotalRecordProductByCategory(int ID)
+        {
+            var totalRecord = db.Products.Where(x => x.Status == true && x.CategoryID==ID && x.Quantity > 0).Count();
+            return totalRecord;
+
+        }
+        public int TakeTotalRecordProductBySearchProduct(string searchString)
+        {
+            var totalRecord = db.Products.Where(x => x.Status == true && x.Name.Contains(searchString) && x.Quantity > 0).Count();
+            return totalRecord;
+        }
+
         // test truy vấn theo cách khác
         /*public String TakeProductName(int InputID)
         {
@@ -100,8 +118,8 @@
                                  select PN.Name;
             return Product_Name;
         }*/
-    
-    public int ID { get; set; }
+
+        public int ID { get; set; }
 
         [StringLength(300)]
         public string Name { get; set; }

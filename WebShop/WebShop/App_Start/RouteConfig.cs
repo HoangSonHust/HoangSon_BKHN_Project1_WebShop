@@ -48,6 +48,21 @@ namespace WebShop
                defaults: new { controller = "News", action = "news", id = UrlParameter.Optional }
                 , namespaces: new[] { "WebShop.Controllers" }
            );
+
+            routes.MapRoute(
+               name: "chi_tiet_tin tức",
+               url: "tin-tuc/{metatitle}-{id}",
+               defaults: new { controller = "News", action = "DetailNews", id = UrlParameter.Optional }
+                , namespaces: new[] { "WebShop.Controllers" }
+           );
+
+            routes.MapRoute(
+               name: "chi_tiet_khuyen-mai",
+               url: "khuyen-mai/{metatitle}-{id}",
+               defaults: new { controller = "Promotion", action = "PromotionDetail", id = UrlParameter.Optional }
+                , namespaces: new[] { "WebShop.Controllers" }
+           );
+
             routes.MapRoute(
                name: "lien hệ",
                url: "lien-he",
@@ -60,14 +75,6 @@ namespace WebShop
                defaults: new { controller = "Promotion", action = "Promotion", id = UrlParameter.Optional }
                 , namespaces: new[] { "WebShop.Controllers" }
            );
-
-
-            /*  routes.MapRoute(
-                name: "Default",
-                url: "trang-chu/",
-                defaults: new { Areas = "User", controller = "Product", action = "MainShop", id = UrlParameter.Optional },
-                namespaces: new[] { "WebShop.Controllers" }
-            );*/
 
             routes.MapRoute(
               name: "Default",

@@ -11,20 +11,10 @@
         <div class="container">
             <div class="row">
 
-                <!-- Images -->
-                <div class="col-lg-2 order-lg-1 order-2">
-                    <ul class="image_list">
-                        <li data-image="images/single_4.jpg"><img src="images/single_4.jpg" alt=""></li>
-                        <li data-image="images/single_2.jpg"><img src="images/single_2.jpg" alt=""></li>
-                        <li data-image="images/single_3.jpg"><img src="images/single_3.jpg" alt=""></li>
-                    </ul>
-                </div>
                 <!-- Selected Image -->
                 <div class="col-lg-5 order-lg-2 order-1">
                     <div class="image_selected"><img src="@Item.Image" alt=""></div>
                 </div>
-
-
                 <!-- Description -->
                 <div class="col-lg-5 order-3">
                     <div class="product_description">
@@ -35,20 +25,15 @@
                         <div class="order_info d-flex flex-row">
                             <form action="" class="clearfix">
                                 <div class="clearfix" style="z-index: 1000;"></div>
-                                <strike>Giá Cũ: @Item.Price</strike>
-                                <div class="product_price">Giá Mới: @Item.PromotionPrice</div>
+                                <strike>Giá Cũ: @Item.Price.ToString("N0")</strike>
+                                <div class="product_price">Giá Mới: @Item.PromotionPrice.ToString("N0")</div>
                                 <div class="button_container">
-
-                                    <button type="button" class="button cart_button"><a href="/Cart/AddItem?productID=@Item.ID&quantity=1">Thêm vào giỏ hàng</a></button>
-
-                                    <div class="product_fav"><i class="fas fa-heart"></i></div>
+                                    <button type="button" class="button cart_button"><a href="/Cart/AddItem?productID=@Item.ID&quantity=1">Thêm vào giỏ hàng</a></button>                    
                                 </div>
-
                             </form>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

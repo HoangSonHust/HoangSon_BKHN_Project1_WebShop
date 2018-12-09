@@ -1,13 +1,12 @@
 ﻿@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Main_Shop_Layout.cshtml";
-    var SideBar = ViewBag.SideBar;
-    var Brands = ViewBag.Brands;
+ 
     var ReviewProduct = ViewBag.ReviewProduct;
+    var TotalRecord = ViewBag.totalRecord;
 }
 
 
-<h2>Index</h2>
 <div class="shop">
     <div class="container">
         <div class="row">
@@ -17,70 +16,40 @@
                 <!-- Shop Content -->
                 <div class="shop_content">
                     <div class="shop_bar clearfix">
-                        <div class="shop_product_count"><span>186</span> products found</div>
-                        <div class="shop_sorting">
-                            <span>Sort by:</span>
-                            <ul>
-                                <li>
-                                    <span class="sorting_text">highest rated<i class="fas fa-chevron-down"></i></span>
-                                    <ul>
-                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
-                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
-                                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>price</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="shop_product_count"><span>@TotalRecord</span> products found</div>
                     </div>
-
                     <div class="product_grid">
                         <div class="product_grid_border"></div>
                         @foreach (var Item in ReviewProduct)
                         {
                             <!-- Product Item -->
+
                             <div class="product_item is_new">
                                 <div class="product_border"></div>
-                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src=@Item.Image></div>
+                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src=@Item.Image alt=""></div>
                                 <div class="product_content">
-                                    <div class="product_price">giá gốc: @Item.Price đồng</div>
-                                    <div class="product_price">giá khuyến mãi: @Item.PromotionPrice đồng</div>
-                                    <div class="product_name"><div><a href="@Item.MetaTitle" tabindex="0">@Item.Name</a></div></div>
+                                    <div class="product_price">giá gốc: @Item.Price.ToString("N0") đồng</div>
+                                    <div class="product_price">giá khuyến mãi: @Item.PromotionPrice.ToString("N0") đồng</div>
+                                    <p>Số lượt xem: @Item.ViewCount</p>
+                                    <div class="product_name"><div><a href="/san-pham/@Item.MetaTitle-@Item.ID" tabindex="0">@Item.Name</a></div></div>
+                                    <div class="button_container">
+                                        <button type="button" class="button cart_button"><a href="/Cart/AddItem?productID=@Item.ID&quantity=1">Add to Cart</a></button>
+                                    </div>
                                 </div>
                                 <div class="product_fav"><i class="fas fa-heart"></i></div>
                                 <ul class="product_marks">
-                                    <li class="product_mark product_discount">-25%</li>
                                     <li class="product_mark product_discount">-((@Item.Price/@Item.PromotionPrice)*100)%</li>
                                 </ul>
                             </div>
 
-
-
-
                         }
-
                     </div>
-
                 </div>
-
                 <!-- Shop Page Navigation -->
-
-                <div class="shop_page_nav d-flex flex-row">
-                    <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
-                    <ul class="page_nav d-flex flex-row">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">21</a></li>
-                    </ul>
-                    <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
-                </div>
-
             </div>
 
         </div>
     </div>
 </div>
-
 
 
